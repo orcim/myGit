@@ -1,0 +1,174 @@
+01-Init
+#######
+
+Premessa
+========
+
+Creare un account su: https://github.com
+
+Configurazione 
+==============
+
+Prima di iniziare a lavorare con i repositories dobbiamo
+ configurare le nostre variabili d'ambiente.
+
+Identity
+--------
+
+Per aggiungere le nostre referenze **globali**::
+
+	$ git config --global user.name "orcim"
+	$ git config --global user.email orciml@gmail.com
+
+Editor
+------
+
+Per impostare il nostro **editor** preferito::
+
+	$ git config --global core.editor code
+
+Edit
+----
+
+Per editare le nostre variabili tramite editor::
+
+	$ git config --global --edit
+	$ git config --edit
+
+Alias
+-----
+
+Per facilitare i comandi con piu' opzioni si possono costruire
+ dei nuovi comandi combinati tramite la definizione degli **alias**.
+
+Esempio::
+
+	$ git config --global alias.cf-l 'config --list'
+	$ git config --global alias.in 'init'
+	$ git config --global alias.ad 'add .'
+	$ git config --global alias.ct-m 'commit -m'
+	$ git config --global alias.ct-a 'commit -am'
+	$ git config --global alias.sh 'show'
+	$ git config --global alias.tg 'tag'
+	$ git config --global alias.ps 'push'
+	$ git config --global alias.ps-o 'push origin master'
+	$ git config --global alias.st 'status'
+	$ git config --global alias.lg 'log --oneline --graph --all --decorate'
+	$ git config --global alias.rs-s 'reset --soft HEAD^'
+	$ git config --global alias.rs-h 'reset --hard HEAD^'
+	$ git config --global alias.cl-r 'clone --recursive'
+	$ git config --global alias.ck 'checkout'
+	$ git config --global alias.ck-b 'checkout -b'
+	$ git config --global alias.ck-- 'checkout -- .'
+	$ git config --global alias.br 'branch'
+	$ git config --global alias.br-a 'branch -a'
+	$ git config --global alias.br-d 'branch -d'
+	$ git config --global alias.br-D 'branch -D'
+	$ git config --global alias.ss 'stash'
+	$ git config --global alias.ss-p 'stash pop'
+	$ git config --global alias.ss-l 'stash list'
+	$ git config --global alias.ss-s 'stash show'
+	$ git config --global alias.rf 'reflog'
+
+Loro utilizzo. Esempio::
+
+	git lg
+
+Inizio
+======
+
+Questo e' il primo documento nel ramo principale.
+
+Per realizzare questo repository sono stati necessari vari passaggi.
+
+Creare un repository locale
+---------------------------
+
+Il repository locale (Main)
+
+Sequenze:
+
+- Creare una cartella di lavoro dove inserire e organizzare i vari documenti (directories, files)
+- Inizializzare il repository locale. **(init)** 
+- Creare il file **.gitignore** per escludere una serie di documenti dalla tracciabilita'
+- Creare e/o inserire i vari documenti
+- Aggiungere la tracciabilita' dei documenti inseriti. **(add)** 
+- Salvare i documenti tracciati. **(commit)** 
+
+Comandi eseguiti sotto linux da shell (da qui in poi abbreviato in **cmd**)::
+
+	$ mkdir myGit && cd myGit
+	$ echo "# git-tutorial" >> README.md
+	$ git init
+	$ git add .
+	$ git commit -m 'ok inizio del tutorial'
+
+Creare un repository remoto
+---------------------------
+
+Il repository remoto (Origin)
+
+Sequenze:
+
+- Loggarsi sul sito: https://github.com
+- Selezionare la voce **Repositories** dalla propria pagina: https://github.com/orcim
+- Creare un nuovo repository. Esempio: **myGit** premendo il pulsante **New**
+
+Eseguire la sequenza dei Comandi seguenti per inizializzare il repository remoto::
+
+	$ git remote add origin https://github.com/orcim/myGit.git
+	$ git branch -M main
+	$ git push -u origin main
+
+La prima istruzione definisce il nostro repository remoto
+La seconda imposta il branch di lavoro. Nel nostro caso **main**
+La terza salva il nostro repository locale nel repository remoto
+
+Security
+========
+
+- https://linuxkamarada.com/en/2019/07/14/using-git-with-ssh-keys/
+
+Per operare con **github** senza dover sempre passare le informazioni di **user** e **password**
+ si consiglia di generare una chiave pubblica ed inserirla nel settings di github.
+
+Comando per creare una nuova chiave di nome **id_rsa_github**::
+
+	$ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_github
+
+Inserire nel file **~/.ssh/config** il seguente codice::
+
+	host github.com
+	HostName github.com
+	IdentityFile ~/.ssh/id_rsa_github
+	User git
+
+Aggiungiamo la chiave pubblica in https://github.com/settings/ssh/new
+ assengando un nome e inserendo il contenuto della chiave pubblica **id_rsa_github.pub**
+ nel'apposito campo.
+
+Ricordarsi di impostare i permessi di sola lettura dopo le modifiche ai seguenti files::
+
+	$ chmod 400 ~/.ssh/id_*
+	$ chmod 400 ~/.ssh/config
+
+Per verificare che la chiave funzioni::
+
+	$ ssh -T git@github.com
+
+risposta::
+
+	origin	https://github.com/orcim/myGit.git (fetch)
+	origin	https://github.com/orcim/myGit.git (push)
+
+Si devono modificare anche le origini locali che come si nota sono ancora in **https**::
+
+	$ git remote set-url origin git@github.com:orcim/myGit.git
+
+Da adesso in poi si possono usare i comadi **fetch** e **push**
+ senza dover inserire le nostre credenziali
+
+Esempio::
+
+	$ git push
+

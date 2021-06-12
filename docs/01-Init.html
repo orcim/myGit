@@ -1,0 +1,261 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>01-Init &#8212; myNotes 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="02-Operations" href="02-Operations.html" />
+    <link rel="prev" title="myGit" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="init">
+<h1>01-Init<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="premessa">
+<h2>Premessa<a class="headerlink" href="#premessa" title="Permalink to this headline">¶</a></h2>
+<p>Creare un account su: <a class="reference external" href="https://github.com">https://github.com</a></p>
+</div>
+<div class="section" id="configurazione">
+<h2>Configurazione<a class="headerlink" href="#configurazione" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Prima di iniziare a lavorare con i repositories dobbiamo</dt>
+<dd>configurare le nostre variabili d’ambiente.</dd>
+</dl>
+<div class="section" id="identity">
+<h3>Identity<a class="headerlink" href="#identity" title="Permalink to this headline">¶</a></h3>
+<p>Per aggiungere le nostre referenze <strong>globali</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git config --global user.name &quot;orcim&quot;
+$ git config --global user.email orciml@gmail.com
+</pre></div>
+</div>
+</div>
+<div class="section" id="editor">
+<h3>Editor<a class="headerlink" href="#editor" title="Permalink to this headline">¶</a></h3>
+<p>Per impostare il nostro <strong>editor</strong> preferito:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git config --global core.editor code
+</pre></div>
+</div>
+</div>
+<div class="section" id="edit">
+<h3>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h3>
+<p>Per editare le nostre variabili tramite editor:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git config --global --edit
+$ git config --edit
+</pre></div>
+</div>
+</div>
+<div class="section" id="alias">
+<h3>Alias<a class="headerlink" href="#alias" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Per facilitare i comandi con piu’ opzioni si possono costruire</dt>
+<dd>dei nuovi comandi combinati tramite la definizione degli <strong>alias</strong>.</dd>
+</dl>
+<p>Esempio:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git config --global alias.cf-l &#39;config --list&#39;
+$ git config --global alias.in &#39;init&#39;
+$ git config --global alias.ad &#39;add .&#39;
+$ git config --global alias.ct-m &#39;commit -m&#39;
+$ git config --global alias.ct-a &#39;commit -am&#39;
+$ git config --global alias.sh &#39;show&#39;
+$ git config --global alias.tg &#39;tag&#39;
+$ git config --global alias.ps &#39;push&#39;
+$ git config --global alias.ps-o &#39;push origin master&#39;
+$ git config --global alias.st &#39;status&#39;
+$ git config --global alias.lg &#39;log --oneline --graph --all --decorate&#39;
+$ git config --global alias.rs-s &#39;reset --soft HEAD^&#39;
+$ git config --global alias.rs-h &#39;reset --hard HEAD^&#39;
+$ git config --global alias.cl-r &#39;clone --recursive&#39;
+$ git config --global alias.ck &#39;checkout&#39;
+$ git config --global alias.ck-b &#39;checkout -b&#39;
+$ git config --global alias.ck-- &#39;checkout -- .&#39;
+$ git config --global alias.br &#39;branch&#39;
+$ git config --global alias.br-a &#39;branch -a&#39;
+$ git config --global alias.br-d &#39;branch -d&#39;
+$ git config --global alias.br-D &#39;branch -D&#39;
+$ git config --global alias.ss &#39;stash&#39;
+$ git config --global alias.ss-p &#39;stash pop&#39;
+$ git config --global alias.ss-l &#39;stash list&#39;
+$ git config --global alias.ss-s &#39;stash show&#39;
+$ git config --global alias.rf &#39;reflog&#39;
+</pre></div>
+</div>
+<p>Loro utilizzo. Esempio:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">lg</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="inizio">
+<h2>Inizio<a class="headerlink" href="#inizio" title="Permalink to this headline">¶</a></h2>
+<p>Questo e’ il primo documento nel ramo principale.</p>
+<p>Per realizzare questo repository sono stati necessari vari passaggi.</p>
+<div class="section" id="creare-un-repository-locale">
+<h3>Creare un repository locale<a class="headerlink" href="#creare-un-repository-locale" title="Permalink to this headline">¶</a></h3>
+<p>Il repository locale (Main)</p>
+<p>Sequenze:</p>
+<ul class="simple">
+<li>Creare una cartella di lavoro dove inserire e organizzare i vari documenti (directories, files)</li>
+<li>Inizializzare il repository locale. <strong>(init)</strong></li>
+<li>Creare il file <strong>.gitignore</strong> per escludere una serie di documenti dalla tracciabilita’</li>
+<li>Creare e/o inserire i vari documenti</li>
+<li>Aggiungere la tracciabilita’ dei documenti inseriti. <strong>(add)</strong></li>
+<li>Salvare i documenti tracciati. <strong>(commit)</strong></li>
+</ul>
+<p>Comandi eseguiti sotto linux da shell (da qui in poi abbreviato in <strong>cmd</strong>):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ mkdir myGit &amp;&amp; cd myGit
+$ echo &quot;# git-tutorial&quot; &gt;&gt; README.md
+$ git init
+$ git add .
+$ git commit -m &#39;ok inizio del tutorial&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="creare-un-repository-remoto">
+<h3>Creare un repository remoto<a class="headerlink" href="#creare-un-repository-remoto" title="Permalink to this headline">¶</a></h3>
+<p>Il repository remoto (Origin)</p>
+<p>Sequenze:</p>
+<ul class="simple">
+<li>Loggarsi sul sito: <a class="reference external" href="https://github.com">https://github.com</a></li>
+<li>Selezionare la voce <strong>Repositories</strong> dalla propria pagina: <a class="reference external" href="https://github.com/orcim">https://github.com/orcim</a></li>
+<li>Creare un nuovo repository. Esempio: <strong>myGit</strong> premendo il pulsante <strong>New</strong></li>
+</ul>
+<p>Eseguire la sequenza dei Comandi seguenti per inizializzare il repository remoto:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git remote add origin https://github.com/orcim/myGit.git
+$ git branch -M main
+$ git push -u origin main
+</pre></div>
+</div>
+<p>La prima istruzione definisce il nostro repository remoto
+La seconda imposta il branch di lavoro. Nel nostro caso <strong>main</strong>
+La terza salva il nostro repository locale nel repository remoto</p>
+</div>
+</div>
+<div class="section" id="security">
+<h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://linuxkamarada.com/en/2019/07/14/using-git-with-ssh-keys/">https://linuxkamarada.com/en/2019/07/14/using-git-with-ssh-keys/</a></li>
+</ul>
+<dl class="docutils">
+<dt>Per operare con <strong>github</strong> senza dover sempre passare le informazioni di <strong>user</strong> e <strong>password</strong></dt>
+<dd>si consiglia di generare una chiave pubblica ed inserirla nel settings di github.</dd>
+</dl>
+<p>Comando per creare una nuova chiave di nome <strong>id_rsa_github</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_github
+</pre></div>
+</div>
+<p>Inserire nel file <strong>~/.ssh/config</strong> il seguente codice:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">host</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span>
+<span class="n">HostName</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span>
+<span class="n">IdentityFile</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa_github</span>
+<span class="n">User</span> <span class="n">git</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Aggiungiamo la chiave pubblica in <a class="reference external" href="https://github.com/settings/ssh/new">https://github.com/settings/ssh/new</a></dt>
+<dd>assengando un nome e inserendo il contenuto della chiave pubblica <strong>id_rsa_github.pub</strong>
+nel’apposito campo.</dd>
+</dl>
+<p>Ricordarsi di impostare i permessi di sola lettura dopo le modifiche ai seguenti files:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ chmod 400 ~/.ssh/id_*
+$ chmod 400 ~/.ssh/config
+</pre></div>
+</div>
+<p>Per verificare che la chiave funzioni:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ssh -T git@github.com
+</pre></div>
+</div>
+<p>risposta:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">origin</span>  <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">orcim</span><span class="o">/</span><span class="n">myGit</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
+<span class="n">origin</span>  <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">orcim</span><span class="o">/</span><span class="n">myGit</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Si devono modificare anche le origini locali che come si nota sono ancora in <strong>https</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git remote set-url origin git@github.com:orcim/myGit.git
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Da adesso in poi si possono usare i comadi <strong>fetch</strong> e <strong>push</strong></dt>
+<dd>senza dover inserire le nostre credenziali</dd>
+</dl>
+<p>Esempio:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git push
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">myGit</a></li>
+      <li>Next: <a href="02-Operations.html" title="next chapter">02-Operations</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, by Orcim.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/01-Init.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

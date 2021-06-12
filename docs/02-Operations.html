@@ -1,0 +1,448 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>02-Operations &#8212; myNotes 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="01-Init" href="01-Init.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="operations">
+<h1>02-Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="locale">
+<h2>Locale<a class="headerlink" href="#locale" title="Permalink to this headline">¶</a></h2>
+<p>Di seguito le operazioni piu’ usate per operare nel repository locale</p>
+<div class="section" id="add">
+<h3>Add<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-add">https://git-scm.com/docs/git-add</a></li>
+</ul>
+<p>Per aggiungere (tracciare) tutti i files presenti nel repository locale</p>
+<p>Esempio:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git add .
+</pre></div>
+</div>
+<p>Per tracciare tutto anche le directories presenti</p>
+<blockquote>
+<div>$ git add - A</div></blockquote>
+<p>Per aggiungere un singolo file nel repository locale:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git add pippo.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove">
+<h3>Remove<a class="headerlink" href="#remove" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-rm">https://git-scm.com/docs/git-rm</a></li>
+</ul>
+<p>Per rimuovere un file dalla gestione del repository:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git rm pippo.txt
+</pre></div>
+</div>
+<p>Per rimuovere i files indicati dal tracciamento del repository locale:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git reset -- *.pyc
+</pre></div>
+</div>
+</div>
+<div class="section" id="commit">
+<h3>Commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-commit">https://git-scm.com/docs/git-commit</a></li>
+</ul>
+<p>Per salvare le modifiche nel repository locale:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git commit -m &#39;first commit&#39;
+$ git commit -am &#39;first commit&#39;
+</pre></div>
+</div>
+<p>Per modificare l’ultimo commento del commit:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git commit --amend -m &#39;nuovo commento&#39;
+</pre></div>
+</div>
+<p>Per modificare N commenti dei commits.</p>
+<p>Esempio HEAD~4 indica di considerare gli ultimi 4 commit a partire da HEAD:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git rebase -i HEAD~4
+</pre></div>
+</div>
+<ul class="simple">
+<li>Posizionarsi sui commit che si vogliono modificare e sostituire <strong>pick</strong> con <strong>reword</strong>.</li>
+<li>Salvare ed uscire</li>
+<li>Ad ogni commit modificato verra’ proposto la modifica.</li>
+</ul>
+</div>
+<div class="section" id="reset">
+<h3>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-reset">https://git-scm.com/docs/git-reset</a></li>
+</ul>
+<p>Per eliminare tutte le modifiche fatte in locale:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git reset --hard origin/master
+</pre></div>
+</div>
+<div class="section" id="reset-soft">
+<h4>Reset soft<a class="headerlink" href="#reset-soft" title="Permalink to this headline">¶</a></h4>
+<p>L’opzione –soft cancella il commit ma lascia i files invariati.</p>
+<p>Se ancora non è stato stato eseguito il push verso un repo remoto:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">soft</span> <span class="n">HEAD</span><span class="o">^</span>
+</pre></div>
+</div>
+<p>In Git:</p>
+<ul class="simple">
+<li><strong>HEAD</strong> è la commit più recente mentre</li>
+<li><strong>HEAD^</strong> è la penultima</li>
+<li><strong>HEAD^^</strong> è la terzultima.</li>
+</ul>
+<p>In alternativa è possibile indicare l’SHA-1 dell’hash della commit alla quale si vuole tornare, qualunque essa sia:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">soft</span> <span class="mi">9</span><span class="n">fa5f6a</span>
+</pre></div>
+</div>
+<p>Il numero di hash di ogni commit è rintracciabile con un semplice git log –oneline</p>
+</div>
+<div class="section" id="reset-hard">
+<h4>Reset hard<a class="headerlink" href="#reset-hard" title="Permalink to this headline">¶</a></h4>
+<p>L’opzione –hard cancella il commit e ripristina anche i files.</p>
+<p>Se volete riportare anche i files allo stato in cui si trovavano prima del commit:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span> <span class="n">HEAD</span><span class="o">^</span>
+</pre></div>
+</div>
+<p>Questo porterà “indietro nel tempo” il vostro repo, alla penultima commit.
+Sarà come se le ultime modifiche (e con esse l’ultima commit) non fossero mai esistite.</p>
+</div>
+</div>
+<div class="section" id="status">
+<h3>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-status">https://git-scm.com/docs/git-status</a></li>
+</ul>
+<p>Per visualizzare lo stato attuale rispetto al repository locale:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+</div>
+<div class="section" id="branch">
+<h3>Branch<a class="headerlink" href="#branch" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-branch">https://git-scm.com/docs/git-branch</a></li>
+</ul>
+<p>Per visualizzare il branch attuale:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git branch
+</pre></div>
+</div>
+<p>Per visualizzare tutti i branch (anche quelli remoti):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git branch -a
+</pre></div>
+</div>
+<p>Normalmente il ramo principale si chiama <strong>master</strong>.</p>
+<p>Per creare una diramazione del progetto:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git checkout -b nuovoBranch
+</pre></div>
+</div>
+<p>Per cancellare un ramo dal repository locale:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git branch -d nuovoBranch
+</pre></div>
+</div>
+<p>Per cancellare un ramo dai repositories:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git branch -D nuovoBranch
+</pre></div>
+</div>
+</div>
+<div class="section" id="diff">
+<h3>Diff<a class="headerlink" href="#diff" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-diff">https://git-scm.com/docs/git-diff</a></li>
+</ul>
+<p>Per visualizzare le modifiche effettuate sino ad ora rispetto al repository locale:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git diff
+</pre></div>
+</div>
+<p>Per visualizzare le modifiche tra due branch:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git diff &lt;branch_sorgente&gt; &lt;branch_target&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="show">
+<h3>Show<a class="headerlink" href="#show" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-show">https://git-scm.com/docs/git-show</a></li>
+</ul>
+<p>Per visualizzare le modifiche in corso:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git show
+</pre></div>
+</div>
+<p>visualizza le modifiche del commit passato:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git show 7c20a7
+</pre></div>
+</div>
+</div>
+<div class="section" id="merge">
+<h3>Merge<a class="headerlink" href="#merge" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-merge">https://git-scm.com/docs/git-merge</a></li>
+</ul>
+<p>Per unire il ramo indicato al ramo attuale:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git merge nuovoBranch
+</pre></div>
+</div>
+</div>
+<div class="section" id="stash">
+<h3>Stash<a class="headerlink" href="#stash" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-stash">https://git-scm.com/docs/git-stash</a></li>
+</ul>
+<p>Se si vuole preservare una situazione di modifiche momentanea:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git stash
+$ git stash push
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Equivale ad un <strong>create</strong> e uno <strong>store</strong> successivo.</p>
+</div>
+<p>Per ripristinare la situazione precedente:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git stash pop
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Equivale ad un <strong>apply</strong> e un <strong>drop</strong> successivo.</p>
+</div>
+<p>Per visualizzare lo stack (lista) degli stash:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git stash --list
+</pre></div>
+</div>
+<p>Per visualizzare le modifiche dello stash in corso:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$git stash show
+</pre></div>
+</div>
+</div>
+<div class="section" id="checkout">
+<h3>Checkout<a class="headerlink" href="#checkout" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-checkout">https://git-scm.com/docs/git-checkout</a></li>
+</ul>
+<p>Per ritornare ad un ramo:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git checkout nuovoBranch
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Per ritornare al ramo principale (cambia ramo)</dt>
+<dd><p class="first">(non sovrascrivere le modifiche locali non salvate):</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span>$ git checkout master
+</pre></div>
+</div>
+</dd>
+<dt>Per ritornare al ramo principale</dt>
+<dd><p class="first">(sovrascrive le modifiche locali non salvate):</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span>$ git checkout -- .
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Con questo comando si perdono definitivamente le modifiche.
+Si puo’ usare il comando <em>stash</em>
+se si vuole preservare le modifiche in uno stack.</p>
+</div>
+<p>Per ritornare solo il file indicato:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git checkout -- &lt;nomeFile&gt;
+</pre></div>
+</div>
+<p>Per ritornare ad una situazione identificata dal proprio ID:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git checkout 1b2e1d63ff
+</pre></div>
+</div>
+</div>
+<div class="section" id="tag">
+<h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-tag">https://git-scm.com/docs/git-tag</a></li>
+</ul>
+<p>Per rendere piu’ tracciabile il punto di un commit:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git tag wrk.001
+$ git tag v-1.0.0
+</pre></div>
+</div>
+<p>per cancellare un tag:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git tag -d v-1.0.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="log">
+<h3>Log<a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-log">https://git-scm.com/docs/git-log</a></li>
+</ul>
+<p>Per visualizzare la lista dei operazioni eseguite:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git log
+</pre></div>
+</div>
+<p>Per vedere un maggior dettaglio:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git log --oneline --graph --all --decorate
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Show<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-show">https://git-scm.com/docs/git-show</a></li>
+</ul>
+<p>Per visualizzare l’ultimo commit eseguito:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git show
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="remoto">
+<h2>Remoto<a class="headerlink" href="#remoto" title="Permalink to this headline">¶</a></h2>
+<p>Quando si modifica il repository locale il puntatore <strong>HEAD -&gt; main</strong></p>
+<p>Risultera’ disallineato rispetto al puntatore del repository remoto <strong>origin/master</strong></p>
+<img alt="_images/git_001.png" src="_images/git_001.png" />
+<p>Sino al successivo aggiornamento tramite il comando <strong>push</strong></p>
+<div class="section" id="push">
+<h3>Push<a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-push">https://git-scm.com/docs/git-push</a></li>
+</ul>
+<p>Per salvare il contenuto tracciato nel repository locale sul repository remoto:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git push origin master
+</pre></div>
+</div>
+<p>Se si vuole, ai successivi push, non indicare sempre <strong>origin master</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git push --set-upstream origin master
+$ git push -u origin master
+</pre></div>
+</div>
+<p>Dopo questo comando si devono vedere i puntatori allineati.</p>
+<img alt="_images/git_002.png" src="_images/git_002.png" />
+<p>Per cancellare un ramo dal repository remoto:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git push origin --delete &lt;branch&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="revert">
+<h3>Revert<a class="headerlink" href="#revert" title="Permalink to this headline">¶</a></h3>
+<p>Per rimuovere un push:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">revert</span> <span class="n">HEAD</span>
+</pre></div>
+</div>
+<p>Questo comando crea un nuovo commit che annulla tutto ciò che è stato introdotto dal commit indesiderato.</p>
+</div>
+<div class="section" id="clone">
+<h3>Clone<a class="headerlink" href="#clone" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a></li>
+</ul>
+<p>Per creare una copia del repository remoto nel proprio Host:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone nomeutente@host:/percorso/del/repository nomeRepositoryLocale
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In assenza del nome del repository locale viene dato lo stesso nome del repository remoto.</p>
+</div>
+<div class="section" id="submodule">
+<h4>Submodule<a class="headerlink" href="#submodule" title="Permalink to this headline">¶</a></h4>
+<p>Per clonare i repositories inclusi nello stesso repository remoto:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone --recursive &lt;url&gt;
+$ git clone --recursive https://github.com/espressif/esp-iot-solution
+</pre></div>
+</div>
+<p>Se si vuole clonare o aggiornare in un secondo momento dal repository locale:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git submodule update
+$ git submodule update --init --recursive
+</pre></div>
+</div>
+<p>Per visualizzare i sottomoduli:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git git submodule
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="fetch">
+<h3>Fetch<a class="headerlink" href="#fetch" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://git-scm.com/docs/git-fetch">https://git-scm.com/docs/git-fetch</a></li>
+</ul>
+<p>Per recuperare l’ultima situazione dal repository remoto nell’area di lavoro attuale:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git fetch origin
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="01-Init.html" title="previous chapter">01-Init</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, by Orcim.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/02-Operations.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
