@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__
+
+# C extensions
+*.so
+
+# Translations
+*.mo
+*.pot
+
+# Sphinx
+build
+mySphinx
+
+# dotenv
+.env
+
+# virtualenv
+venv/
+ENV/
+
+# other
+*.old
+tmp_*.*
+zz*.*
