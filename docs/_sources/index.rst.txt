@@ -8,7 +8,7 @@ myGit
 
 .. sidebar:: by Orcim 
 
-	:now: |today|
+	:ver.: |today|
 
 .. toctree::
    :maxdepth: 2

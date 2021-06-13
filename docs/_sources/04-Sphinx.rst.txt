@@ -160,7 +160,7 @@ inserire prima del toctree il seguente codice::
 
 	.. sidebar:: by Orcim 
 
-		:now: |today|
+		:ver.: |today|
 
 	.. toctree::
 
@@ -174,11 +174,11 @@ Per cambiare il tema si deve impostare nel file **conf.py**
 
 l'attributo **html_theme**. Esempio::
 
-	html_theme = 'furo'
+	html_theme = 'sphinx_celery'
 
 Alcuni temi devono essere installati. Come nel nostro esempio::
 
-	$ pip3 install furo
+	$ pip3 install sphinx_celery
 
 Bisogna commentare la seguente sezione che va in conflitto con questo tema::
 
@@ -191,6 +191,8 @@ Ricompilare::
 
 	$ make clean
 	$ make html
+
+Si noti che la funzionalita' di navigazione del sito dipende molto dal tema scelto.
 
 Build
 =====

@@ -1,130 +1,45 @@
-<!doctype html>
-<html class="no-js">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="02-Operations" href="02-Operations.html" /><link rel="prev" title="myGit" href="index.html" />
 
-    <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>01-Init - myNotes 0.1 documentation</title>
-      <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
-    <link rel="stylesheet" href="_static/pygments.css">
-    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
-    
+<!DOCTYPE html>
 
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-Init &#8212; myNotes 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/celery.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="02-Operations" href="02-Operations.html" />
+    <link rel="prev" title="myGit" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="02-Operations.html" title="02-Operations"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="myGit"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">myNotes 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">01-Init</a></li> 
+      </ul>
+    </div>  
 
-<style>
-  :root {
-    --color-code-background: #eeffcc;
-  --color-code-foreground: black;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-    }
-  }
-
-  /* For allowing end-user-specific overrides */
-  .override-light {
-    --color-code-background: #eeffcc;
-  --color-code-foreground: black;
-  
-  }
-  .override-dark {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-</style><link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
-  <body dir="">
-    
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="svg-toc" viewBox="0 0 24 24">
-    <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z"/>
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24">
-    <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      class="feather feather-menu">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-    <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      class="feather feather-chevron-right">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-</svg>
-
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation"></label>
-<label class="overlay toc-overlay" for="__toc"></label>
-
-
-
-<div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-      </label>
-    </div>
-    <div class="header-center">
-      <a href="index.html"><div class="brand">myNotes 0.1 documentation</div></a>
-    </div>
-    <div class="header-right">
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-      </label>
-    </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
-      
-      <div class="sidebar-sticky">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">myGit</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="02-Operations.html"
-                        title="next chapter">02-Operations</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-      </div>
-      
-    </div>
-  </aside>
-  <main class="main">
-    <div class="content">
-      <article role="main">
-        <label class="toc-overlay-icon toc-content-icon" for="__toc">
-          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-        </label>
-        <div class="section" id="init">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="init">
 <h1>01-Init<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="premessa">
 <h2>Premessa<a class="headerlink" href="#premessa" title="Permalink to this headline">¶</a></h2>
@@ -139,7 +54,7 @@
 <div class="section" id="identity">
 <h3>Identity<a class="headerlink" href="#identity" title="Permalink to this headline">¶</a></h3>
 <p>Per aggiungere le nostre referenze <strong>globali</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git config --global user.name "orcim"
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git config --global user.name &quot;orcim&quot;
 $ git config --global user.email orciml@gmail.com
 </pre></div>
 </div>
@@ -166,32 +81,32 @@ $ git config --edit
 </dd>
 </dl>
 <p>Esempio:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git config --global alias.cf-l 'config --list'
-$ git config --global alias.in 'init'
-$ git config --global alias.ad 'add .'
-$ git config --global alias.ct-m 'commit -m'
-$ git config --global alias.ct-a 'commit -am'
-$ git config --global alias.sh 'show'
-$ git config --global alias.tg 'tag'
-$ git config --global alias.ps 'push'
-$ git config --global alias.ps-o 'push origin master'
-$ git config --global alias.st 'status'
-$ git config --global alias.lg 'log --oneline --graph --all --decorate'
-$ git config --global alias.rs-s 'reset --soft HEAD^'
-$ git config --global alias.rs-h 'reset --hard HEAD^'
-$ git config --global alias.cl-r 'clone --recursive'
-$ git config --global alias.ck 'checkout'
-$ git config --global alias.ck-b 'checkout -b'
-$ git config --global alias.ck-- 'checkout -- .'
-$ git config --global alias.br 'branch'
-$ git config --global alias.br-a 'branch -a'
-$ git config --global alias.br-d 'branch -d'
-$ git config --global alias.br-D 'branch -D'
-$ git config --global alias.ss 'stash'
-$ git config --global alias.ss-p 'stash pop'
-$ git config --global alias.ss-l 'stash list'
-$ git config --global alias.ss-s 'stash show'
-$ git config --global alias.rf 'reflog'
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git config --global alias.cf-l &#39;config --list&#39;
+$ git config --global alias.in &#39;init&#39;
+$ git config --global alias.ad &#39;add .&#39;
+$ git config --global alias.ct-m &#39;commit -m&#39;
+$ git config --global alias.ct-a &#39;commit -am&#39;
+$ git config --global alias.sh &#39;show&#39;
+$ git config --global alias.tg &#39;tag&#39;
+$ git config --global alias.ps &#39;push&#39;
+$ git config --global alias.ps-o &#39;push origin master&#39;
+$ git config --global alias.st &#39;status&#39;
+$ git config --global alias.lg &#39;log --oneline --graph --all --decorate&#39;
+$ git config --global alias.rs-s &#39;reset --soft HEAD^&#39;
+$ git config --global alias.rs-h &#39;reset --hard HEAD^&#39;
+$ git config --global alias.cl-r &#39;clone --recursive&#39;
+$ git config --global alias.ck &#39;checkout&#39;
+$ git config --global alias.ck-b &#39;checkout -b&#39;
+$ git config --global alias.ck-- &#39;checkout -- .&#39;
+$ git config --global alias.br &#39;branch&#39;
+$ git config --global alias.br-a &#39;branch -a&#39;
+$ git config --global alias.br-d &#39;branch -d&#39;
+$ git config --global alias.br-D &#39;branch -D&#39;
+$ git config --global alias.ss &#39;stash&#39;
+$ git config --global alias.ss-p &#39;stash pop&#39;
+$ git config --global alias.ss-l &#39;stash list&#39;
+$ git config --global alias.ss-s &#39;stash show&#39;
+$ git config --global alias.rf &#39;reflog&#39;
 </pre></div>
 </div>
 <p>Loro utilizzo. Esempio:</p>
@@ -218,10 +133,10 @@ $ git config --global alias.rf 'reflog'
 </ul>
 <p>Comandi eseguiti sotto linux da shell (da qui in poi abbreviato in <strong>cmd</strong>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir myGit &amp;&amp; cd myGit
-$ echo "# git-tutorial" &gt;&gt; README.md
+$ echo &quot;# git-tutorial&quot; &gt;&gt; README.md
 $ git init
 $ git add .
-$ git commit -m 'ok inizio del tutorial'
+$ git commit -m &#39;ok inizio del tutorial&#39;
 </pre></div>
 </div>
 </div>
@@ -299,85 +214,52 @@ $ chmod 400 ~/.ssh/config
 </div>
 </div>
 
-      </article>
-      <footer>
-        
-        <div class="related-pages">
-          <a class="next-page" href="02-Operations.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">02-Operations</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="index.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Home</div>
-                
-              </div>
-            </a>
-        </div>
 
-        <div class="related-information">
-              Copyright &#169; 2021, by Orcim
-            |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-        </div>
-        
-      </footer>
-    </div>
-    <aside class="toc-drawer">
-      
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">01-Init</a><ul>
-<li><a class="reference internal" href="#premessa">Premessa</a></li>
-<li><a class="reference internal" href="#configurazione">Configurazione</a><ul>
-<li><a class="reference internal" href="#identity">Identity</a></li>
-<li><a class="reference internal" href="#editor">Editor</a></li>
-<li><a class="reference internal" href="#edit">Edit</a></li>
-<li><a class="reference internal" href="#alias">Alias</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#inizio">Inizio</a><ul>
-<li><a class="reference internal" href="#creare-un-repository-locale">Creare un repository locale</a></li>
-<li><a class="reference internal" href="#creare-un-repository-remoto">Creare un repository remoto</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#security">Security</a></li>
-</ul>
-</li>
-</ul>
-
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
-      
-      
-    </aside>
-  </main>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">myGit</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="02-Operations.html"
+                        title="next chapter">02-Operations</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
 </div>
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="02-Operations.html" title="02-Operations"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="myGit"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">myNotes 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">01-Init</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, by Orcim.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+  </body>
 </html>
