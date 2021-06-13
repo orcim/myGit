@@ -6,6 +6,10 @@
 myGit
 =====
 
+.. sidebar:: by Orcim 
+
+	:now: |today|
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -13,6 +17,7 @@ myGit
    01-Init.rst
    02-Operations.rst
    03-Docs.rst
+   04-Sphinx.rst
 
 .. Indices and tables
    ==================

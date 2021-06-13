@@ -54,7 +54,7 @@ Documentazione
 
 Per realizzare una documentazione **Sphinx** 
 
-si rimanda al sito: https://www.sphinx-doc.org/en/master/
+si rimanda al sito: https://www.sphinx-doc.org/en/master/ o alla sezione successiva.
 
 Si consiglia di usare **source** e **build** separati 
 
@@ -63,7 +63,14 @@ cosi da poter pubblicare solo il codice **html** nel repository.
 - copiare la directory di documentazione 
 	chiamata per esempio **mySphinx** nel repository locale
 - eseguire il make file per generare la documentazione
+- nel file **Makefile** aggiungere alla fine la regola **github**
 - pubblicare la documentazione
+
+La regola **github** da aggiungere al **Makefile** e' la seguente::
+
+	github:
+		@make html
+		@cp -a build/html/. ../docs
 
 Comandi
 -------

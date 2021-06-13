@@ -1,44 +1,130 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="03-Docs" href="03-Docs.html" /><link rel="prev" title="01-Init" href="01-Init.html" />
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
+        <title>02-Operations - myNotes 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
+    <link rel="stylesheet" href="_static/pygments.css">
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
+    
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>02-Operations &#8212; myNotes 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="01-Init" href="01-Init.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+<style>
+  :root {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head>
-  <body>
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
+    }
+  }
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="operations">
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">myNotes 0.1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="01-Init.html"
+                        title="previous chapter">01-Init</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="03-Docs.html"
+                        title="next chapter">03-Docs</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <div class="section" id="operations">
 <h1>02-Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="locale">
 <h2>Locale<a class="headerlink" href="#locale" title="Permalink to this headline">¶</a></h2>
@@ -46,84 +132,85 @@
 <div class="section" id="add">
 <h3>Add<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-add">https://git-scm.com/docs/git-add</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-add">https://git-scm.com/docs/git-add</a></p></li>
 </ul>
 <p>Per aggiungere (tracciare) tutti i files presenti nel repository locale</p>
 <p>Esempio:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git add .
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add .
 </pre></div>
 </div>
 <p>Per tracciare tutto anche le directories presenti</p>
 <blockquote>
-<div>$ git add - A</div></blockquote>
+<div><p>$ git add - A</p>
+</div></blockquote>
 <p>Per aggiungere un singolo file nel repository locale:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git add pippo.txt
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add pippo.txt
 </pre></div>
 </div>
 </div>
 <div class="section" id="remove">
 <h3>Remove<a class="headerlink" href="#remove" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-rm">https://git-scm.com/docs/git-rm</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-rm">https://git-scm.com/docs/git-rm</a></p></li>
 </ul>
 <p>Per rimuovere un file dalla gestione del repository:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git rm pippo.txt
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git rm pippo.txt
 </pre></div>
 </div>
 <p>Per rimuovere i files indicati dal tracciamento del repository locale:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git reset -- *.pyc
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git reset -- *.pyc
 </pre></div>
 </div>
 </div>
 <div class="section" id="commit">
 <h3>Commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-commit">https://git-scm.com/docs/git-commit</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-commit">https://git-scm.com/docs/git-commit</a></p></li>
 </ul>
 <p>Per salvare le modifiche nel repository locale:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git commit -m &#39;first commit&#39;
-$ git commit -am &#39;first commit&#39;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit -m 'first commit'
+$ git commit -am 'first commit'
 </pre></div>
 </div>
 <p>Per modificare l’ultimo commento del commit:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git commit --amend -m &#39;nuovo commento&#39;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit --amend -m 'nuovo commento'
 </pre></div>
 </div>
 <p>Per modificare N commenti dei commits.</p>
 <p>Esempio HEAD~4 indica di considerare gli ultimi 4 commit a partire da HEAD:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git rebase -i HEAD~4
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git rebase -i HEAD~4
 </pre></div>
 </div>
 <ul class="simple">
-<li>Posizionarsi sui commit che si vogliono modificare e sostituire <strong>pick</strong> con <strong>reword</strong>.</li>
-<li>Salvare ed uscire</li>
-<li>Ad ogni commit modificato verra’ proposto la modifica.</li>
+<li><p>Posizionarsi sui commit che si vogliono modificare e sostituire <strong>pick</strong> con <strong>reword</strong>.</p></li>
+<li><p>Salvare ed uscire</p></li>
+<li><p>Ad ogni commit modificato verra’ proposto la modifica.</p></li>
 </ul>
 </div>
 <div class="section" id="reset">
 <h3>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-reset">https://git-scm.com/docs/git-reset</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-reset">https://git-scm.com/docs/git-reset</a></p></li>
 </ul>
 <p>Per eliminare tutte le modifiche fatte in locale:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git reset --hard origin/master
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git reset --hard origin/master
 </pre></div>
 </div>
 <div class="section" id="reset-soft">
 <h4>Reset soft<a class="headerlink" href="#reset-soft" title="Permalink to this headline">¶</a></h4>
 <p>L’opzione –soft cancella il commit ma lascia i files invariati.</p>
 <p>Se ancora non è stato stato eseguito il push verso un repo remoto:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">soft</span> <span class="n">HEAD</span><span class="o">^</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">soft</span> <span class="n">HEAD</span><span class="o">^</span>
 </pre></div>
 </div>
 <p>In Git:</p>
 <ul class="simple">
-<li><strong>HEAD</strong> è la commit più recente mentre</li>
-<li><strong>HEAD^</strong> è la penultima</li>
-<li><strong>HEAD^^</strong> è la terzultima.</li>
+<li><p><strong>HEAD</strong> è la commit più recente mentre</p></li>
+<li><p><strong>HEAD^</strong> è la penultima</p></li>
+<li><p><strong>HEAD^^</strong> è la terzultima.</p></li>
 </ul>
 <p>In alternativa è possibile indicare l’SHA-1 dell’hash della commit alla quale si vuole tornare, qualunque essa sia:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">soft</span> <span class="mi">9</span><span class="n">fa5f6a</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">soft</span> <span class="mi">9</span><span class="n">fa5f6a</span>
 </pre></div>
 </div>
 <p>Il numero di hash di ogni commit è rintracciabile con un semplice git log –oneline</p>
@@ -132,7 +219,7 @@ $ git commit -am &#39;first commit&#39;
 <h4>Reset hard<a class="headerlink" href="#reset-hard" title="Permalink to this headline">¶</a></h4>
 <p>L’opzione –hard cancella il commit e ripristina anche i files.</p>
 <p>Se volete riportare anche i files allo stato in cui si trovavano prima del commit:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span> <span class="n">HEAD</span><span class="o">^</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span> <span class="n">HEAD</span><span class="o">^</span>
 </pre></div>
 </div>
 <p>Questo porterà “indietro nel tempo” il vostro repo, alla penultima commit.
@@ -142,183 +229,181 @@ Sarà come se le ultime modifiche (e con esse l’ultima commit) non fossero mai
 <div class="section" id="status">
 <h3>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-status">https://git-scm.com/docs/git-status</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-status">https://git-scm.com/docs/git-status</a></p></li>
 </ul>
 <p>Per visualizzare lo stato attuale rispetto al repository locale:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git status
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git status
 </pre></div>
 </div>
 </div>
 <div class="section" id="branch">
 <h3>Branch<a class="headerlink" href="#branch" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-branch">https://git-scm.com/docs/git-branch</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-branch">https://git-scm.com/docs/git-branch</a></p></li>
 </ul>
 <p>Per visualizzare il branch attuale:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git branch
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git branch
 </pre></div>
 </div>
 <p>Per visualizzare tutti i branch (anche quelli remoti):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git branch -a
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git branch -a
 </pre></div>
 </div>
 <p>Normalmente il ramo principale si chiama <strong>master</strong>.</p>
 <p>Per creare una diramazione del progetto:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git checkout -b nuovoBranch
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b nuovoBranch
 </pre></div>
 </div>
 <p>Per cancellare un ramo dal repository locale:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git branch -d nuovoBranch
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git branch -d nuovoBranch
 </pre></div>
 </div>
 <p>Per cancellare un ramo dai repositories:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git branch -D nuovoBranch
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git branch -D nuovoBranch
 </pre></div>
 </div>
 </div>
 <div class="section" id="diff">
 <h3>Diff<a class="headerlink" href="#diff" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-diff">https://git-scm.com/docs/git-diff</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-diff">https://git-scm.com/docs/git-diff</a></p></li>
 </ul>
 <p>Per visualizzare le modifiche effettuate sino ad ora rispetto al repository locale:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git diff
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git diff
 </pre></div>
 </div>
 <p>Per visualizzare le modifiche tra due branch:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git diff &lt;branch_sorgente&gt; &lt;branch_target&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git diff &lt;branch_sorgente&gt; &lt;branch_target&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="show">
 <h3>Show<a class="headerlink" href="#show" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-show">https://git-scm.com/docs/git-show</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-show">https://git-scm.com/docs/git-show</a></p></li>
 </ul>
 <p>Per visualizzare le modifiche in corso:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git show
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git show
 </pre></div>
 </div>
 <p>visualizza le modifiche del commit passato:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git show 7c20a7
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git show 7c20a7
 </pre></div>
 </div>
 </div>
 <div class="section" id="merge">
 <h3>Merge<a class="headerlink" href="#merge" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-merge">https://git-scm.com/docs/git-merge</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-merge">https://git-scm.com/docs/git-merge</a></p></li>
 </ul>
 <p>Per unire il ramo indicato al ramo attuale:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git merge nuovoBranch
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git merge nuovoBranch
 </pre></div>
 </div>
 </div>
 <div class="section" id="stash">
 <h3>Stash<a class="headerlink" href="#stash" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-stash">https://git-scm.com/docs/git-stash</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-stash">https://git-scm.com/docs/git-stash</a></p></li>
 </ul>
 <p>Se si vuole preservare una situazione di modifiche momentanea:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git stash
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git stash
 $ git stash push
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Equivale ad un <strong>create</strong> e uno <strong>store</strong> successivo.</p>
+<p class="admonition-title">Note</p>
+<p>Equivale ad un <strong>create</strong> e uno <strong>store</strong> successivo.</p>
 </div>
 <p>Per ripristinare la situazione precedente:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git stash pop
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git stash pop
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Equivale ad un <strong>apply</strong> e un <strong>drop</strong> successivo.</p>
+<p class="admonition-title">Note</p>
+<p>Equivale ad un <strong>apply</strong> e un <strong>drop</strong> successivo.</p>
 </div>
 <p>Per visualizzare lo stack (lista) degli stash:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git stash --list
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git stash --list
 </pre></div>
 </div>
 <p>Per visualizzare le modifiche dello stash in corso:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$git stash show
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$git stash show
 </pre></div>
 </div>
 </div>
 <div class="section" id="checkout">
 <h3>Checkout<a class="headerlink" href="#checkout" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-checkout">https://git-scm.com/docs/git-checkout</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-checkout">https://git-scm.com/docs/git-checkout</a></p></li>
 </ul>
 <p>Per ritornare ad un ramo:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git checkout nuovoBranch
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout nuovoBranch
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>Per ritornare al ramo principale (cambia ramo)</dt>
-<dd><p class="first">(non sovrascrivere le modifiche locali non salvate):</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span>$ git checkout master
+<dl>
+<dt>Per ritornare al ramo principale (cambia ramo)</dt><dd><p>(non sovrascrivere le modifiche locali non salvate):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout master
 </pre></div>
 </div>
 </dd>
-<dt>Per ritornare al ramo principale</dt>
-<dd><p class="first">(sovrascrive le modifiche locali non salvate):</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span>$ git checkout -- .
+<dt>Per ritornare al ramo principale</dt><dd><p>(sovrascrive le modifiche locali non salvate):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -- .
 </pre></div>
 </div>
 </dd>
 </dl>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Con questo comando si perdono definitivamente le modifiche.
+<p class="admonition-title">Note</p>
+<p>Con questo comando si perdono definitivamente le modifiche.
 Si puo’ usare il comando <em>stash</em>
 se si vuole preservare le modifiche in uno stack.</p>
 </div>
 <p>Per ritornare solo il file indicato:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git checkout -- &lt;nomeFile&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -- &lt;nomeFile&gt;
 </pre></div>
 </div>
 <p>Per ritornare ad una situazione identificata dal proprio ID:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git checkout 1b2e1d63ff
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout 1b2e1d63ff
 </pre></div>
 </div>
 </div>
 <div class="section" id="tag">
 <h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-tag">https://git-scm.com/docs/git-tag</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-tag">https://git-scm.com/docs/git-tag</a></p></li>
 </ul>
 <p>Per rendere piu’ tracciabile il punto di un commit:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git tag wrk.001
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git tag wrk.001
 $ git tag v-1.0.0
 </pre></div>
 </div>
 <p>per cancellare un tag:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git tag -d v-1.0.0
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git tag -d v-1.0.0
 </pre></div>
 </div>
 </div>
 <div class="section" id="log">
 <h3>Log<a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-log">https://git-scm.com/docs/git-log</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-log">https://git-scm.com/docs/git-log</a></p></li>
 </ul>
 <p>Per visualizzare la lista dei operazioni eseguite:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git log
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git log
 </pre></div>
 </div>
 <p>Per vedere un maggior dettaglio:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git log --oneline --graph --all --decorate
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git log --oneline --graph --all --decorate
 </pre></div>
 </div>
 </div>
 <div class="section" id="id1">
 <h3>Show<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-show">https://git-scm.com/docs/git-show</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-show">https://git-scm.com/docs/git-show</a></p></li>
 </ul>
 <p>Per visualizzare l’ultimo commit eseguito:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git show
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git show
 </pre></div>
 </div>
 </div>
@@ -327,33 +412,33 @@ $ git tag v-1.0.0
 <h2>Remoto<a class="headerlink" href="#remoto" title="Permalink to this headline">¶</a></h2>
 <p>Quando si modifica il repository locale il puntatore <strong>HEAD -&gt; main</strong></p>
 <p>Risultera’ disallineato rispetto al puntatore del repository remoto <strong>origin/master</strong></p>
-<img alt="_images/git_001.png" src="_images/git_001.png" />
+<img alt="_images/git_001.png" src="_images/git_001.png"/>
 <p>Sino al successivo aggiornamento tramite il comando <strong>push</strong></p>
 <div class="section" id="push">
 <h3>Push<a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-push">https://git-scm.com/docs/git-push</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-push">https://git-scm.com/docs/git-push</a></p></li>
 </ul>
 <p>Per salvare il contenuto tracciato nel repository locale sul repository remoto:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git push origin master
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push origin master
 </pre></div>
 </div>
 <p>Se si vuole, ai successivi push, non indicare sempre <strong>origin master</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git push --set-upstream origin master
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push --set-upstream origin master
 $ git push -u origin master
 </pre></div>
 </div>
 <p>Dopo questo comando si devono vedere i puntatori allineati.</p>
-<img alt="_images/git_002.png" src="_images/git_002.png" />
+<img alt="_images/git_002.png" src="_images/git_002.png"/>
 <p>Per cancellare un ramo dal repository remoto:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git push origin --delete &lt;branch&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push origin --delete &lt;branch&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="revert">
 <h3>Revert<a class="headerlink" href="#revert" title="Permalink to this headline">¶</a></h3>
 <p>Per rimuovere un push:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">revert</span> <span class="n">HEAD</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">revert</span> <span class="n">HEAD</span>
 </pre></div>
 </div>
 <p>Questo comando crea un nuovo commit che annulla tutto ciò che è stato introdotto dal commit indesiderato.</p>
@@ -361,30 +446,30 @@ $ git push -u origin master
 <div class="section" id="clone">
 <h3>Clone<a class="headerlink" href="#clone" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a></p></li>
 </ul>
 <p>Per creare una copia del repository remoto nel proprio Host:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone nomeutente@host:/percorso/del/repository nomeRepositoryLocale
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone nomeutente@host:/percorso/del/repository nomeRepositoryLocale
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In assenza del nome del repository locale viene dato lo stesso nome del repository remoto.</p>
+<p class="admonition-title">Note</p>
+<p>In assenza del nome del repository locale viene dato lo stesso nome del repository remoto.</p>
 </div>
 <div class="section" id="submodule">
 <h4>Submodule<a class="headerlink" href="#submodule" title="Permalink to this headline">¶</a></h4>
 <p>Per clonare i repositories inclusi nello stesso repository remoto:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone --recursive &lt;url&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone --recursive &lt;url&gt;
 $ git clone --recursive https://github.com/espressif/esp-iot-solution
 </pre></div>
 </div>
 <p>Se si vuole clonare o aggiornare in un secondo momento dal repository locale:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git submodule update
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git submodule update
 $ git submodule update --init --recursive
 </pre></div>
 </div>
 <p>Per visualizzare i sottomoduli:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git git submodule
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git git submodule
 </pre></div>
 </div>
 </div>
@@ -392,57 +477,112 @@ $ git submodule update --init --recursive
 <div class="section" id="fetch">
 <h3>Fetch<a class="headerlink" href="#fetch" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://git-scm.com/docs/git-fetch">https://git-scm.com/docs/git-fetch</a></li>
+<li><p><a class="reference external" href="https://git-scm.com/docs/git-fetch">https://git-scm.com/docs/git-fetch</a></p></li>
 </ul>
 <p>Per recuperare l’ultima situazione dal repository remoto nell’area di lavoro attuale:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git fetch origin
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git fetch origin
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="03-Docs.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">03-Docs</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="01-Init.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">01-Init</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, by Orcim
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">02-Operations</a><ul>
+<li><a class="reference internal" href="#locale">Locale</a><ul>
+<li><a class="reference internal" href="#add">Add</a></li>
+<li><a class="reference internal" href="#remove">Remove</a></li>
+<li><a class="reference internal" href="#commit">Commit</a></li>
+<li><a class="reference internal" href="#reset">Reset</a><ul>
+<li><a class="reference internal" href="#reset-soft">Reset soft</a></li>
+<li><a class="reference internal" href="#reset-hard">Reset hard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#status">Status</a></li>
+<li><a class="reference internal" href="#branch">Branch</a></li>
+<li><a class="reference internal" href="#diff">Diff</a></li>
+<li><a class="reference internal" href="#show">Show</a></li>
+<li><a class="reference internal" href="#merge">Merge</a></li>
+<li><a class="reference internal" href="#stash">Stash</a></li>
+<li><a class="reference internal" href="#checkout">Checkout</a></li>
+<li><a class="reference internal" href="#tag">Tag</a></li>
+<li><a class="reference internal" href="#log">Log</a></li>
+<li><a class="reference internal" href="#id1">Show</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#remoto">Remoto</a><ul>
+<li><a class="reference internal" href="#push">Push</a></li>
+<li><a class="reference internal" href="#revert">Revert</a></li>
+<li><a class="reference internal" href="#clone">Clone</a><ul>
+<li><a class="reference internal" href="#submodule">Submodule</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fetch">Fetch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="01-Init.html" title="previous chapter">01-Init</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2021, by Orcim.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
       
-      |
-      <a href="_sources/02-Operations.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+    </aside>
+  </main>
+</div>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
 </html>
