@@ -13,6 +13,15 @@ Se si hanno piu' branch (es: main, docs-config) si vedranno piu' puntatori:
 
 .. image:: _static/img/git-branch_001.png
 
+Se nel repository locale sono stati fatti aggiornamenti con **commit**
+
+si potra' vedere che i puntatori si troveranno disallineati 
+
+.. image:: _static/img/git-branch_002.png
+
+Sino a quando non aggiorneremo anche il repository remoto con **push**
+
+
 Local
 =====
 

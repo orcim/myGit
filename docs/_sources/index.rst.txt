@@ -10,6 +10,12 @@ myGit
 
 	:ver.: |today|
 
+Questo documento riassume:
+
+- una sequenza di comandi per l'uso quotidiano di **Git**
+- come realizzare della documentazione con l'ausilio di **Sphinx**
+- come pubblicare la nostra documentazione in **Github**
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:

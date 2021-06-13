@@ -1,7 +1,7 @@
 01-Init
 #######
 
-Intruduction
+Introduction
 ============
 
 Creare un account su: https://github.com
@@ -124,27 +124,36 @@ La prima istruzione definisce il nostro repository remoto
 La seconda imposta il branch di lavoro. Nel nostro caso **main**
 La terza salva il nostro repository locale nel repository remoto
 
+.. note:: Il nome assegnato al ramo principale con l'opzione **-M** di norma e' o **main** o **master** 
+
 Security
 ========
 
 - https://linuxkamarada.com/en/2019/07/14/using-git-with-ssh-keys/
+- https://gist.github.com/jexchan/2351996
 
 Per operare con **github** senza dover sempre passare le informazioni di **user** e **password**
  si consiglia di generare una chiave pubblica ed inserirla nel settings di github.
+
+Make Key
+--------
 
 Comando per creare una nuova chiave di nome **id_rsa_github**::
 
 	$ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_github
 
-Inserire nel file **~/.ssh/config** il seguente codice::
+Config
+------
+
+Inserire nel file di configurazione **~/.ssh/config** il seguente codice::
 
 	host github.com
-	HostName github.com
-	IdentityFile ~/.ssh/id_rsa_github
-	User git
+	 HostName github.com
+	 IdentityFile ~/.ssh/id_rsa_github
+	 User git
 
 Aggiungiamo la chiave pubblica in https://github.com/settings/ssh/new
- assengando un nome e inserendo il contenuto della chiave pubblica **id_rsa_github.pub**
+ assengnado un nome e inserendo il contenuto della chiave pubblica **id_rsa_github.pub**
  nel'apposito campo.
 
 Ricordarsi di impostare i permessi di sola lettura dopo le modifiche ai seguenti files::
@@ -172,3 +181,51 @@ Esempio::
 
 	$ git push
 
+
+Multiply
+--------
+
+Se si ha la necessita' di gestire piu' chiavi pubbliche per siti e utenti diversi:
+
+- Creare la chiave indicando anche la mail con cui si vuole fare l'accesso. 
+
+Esempio::
+
+	$ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_altro -C userName@mail.com
+
+- Inserire nel file di configurazione la nuova sezione
+
+Esempio::
+
+	...
+
+	host github.com-altro
+	 HostName github.com
+	 User git
+	 IdentityFile ~/.ssh/id_rsa_altro
+
+- Inserire la chiave pubblica nel repository remoto.
+- Per utilizzare questa chiave usare la desinenza dell'host definita. 
+
+Esempio::
+
+	$ git clone git@github.com-altro:altro/iotbox-app.git
+
+Agent
+-----
+
+Se vogliamo aggiungere (non obbligatorio) la gestione delle nostre chiavi pubbliche al nostro agente::
+
+	$ ssh-add ~/.ssh/id_rsa_github
+
+Adesso possiamo vedere la lista delle chiavi in gestione::
+
+	ssh-add -l
+
+Se vogliamo vedere tutte le chiavi pubbliche::
+
+	ssh-add -L
+
+Se vogliamo cancellare dalla gestione tutte le chiavi:
+
+	ssh-add -D

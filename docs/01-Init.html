@@ -41,8 +41,8 @@
             
   <div class="section" id="init">
 <h1>01-Init<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="intruduction">
-<h2>Intruduction<a class="headerlink" href="#intruduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Creare un account su: <a class="reference external" href="https://github.com">https://github.com</a></p>
 </div>
 <div class="section" id="configure">
@@ -158,30 +158,40 @@ $ git push -u origin main
 <p>La prima istruzione definisce il nostro repository remoto
 La seconda imposta il branch di lavoro. Nel nostro caso <strong>main</strong>
 La terza salva il nostro repository locale nel repository remoto</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Il nome assegnato al ramo principale con l’opzione <strong>-M</strong> di norma e’ o <strong>main</strong> o <strong>master</strong></p>
+</div>
 </div>
 </div>
 <div class="section" id="security">
 <h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://linuxkamarada.com/en/2019/07/14/using-git-with-ssh-keys/">https://linuxkamarada.com/en/2019/07/14/using-git-with-ssh-keys/</a></p></li>
+<li><p><a class="reference external" href="https://gist.github.com/jexchan/2351996">https://gist.github.com/jexchan/2351996</a></p></li>
 </ul>
 <dl class="simple">
 <dt>Per operare con <strong>github</strong> senza dover sempre passare le informazioni di <strong>user</strong> e <strong>password</strong></dt><dd><p>si consiglia di generare una chiave pubblica ed inserirla nel settings di github.</p>
 </dd>
 </dl>
+<div class="section" id="make-key">
+<h3>Make Key<a class="headerlink" href="#make-key" title="Permalink to this headline">¶</a></h3>
 <p>Comando per creare una nuova chiave di nome <strong>id_rsa_github</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_github
 </pre></div>
 </div>
-<p>Inserire nel file <strong>~/.ssh/config</strong> il seguente codice:</p>
+</div>
+<div class="section" id="config">
+<h3>Config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h3>
+<p>Inserire nel file di configurazione <strong>~/.ssh/config</strong> il seguente codice:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">host</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span>
-<span class="n">HostName</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span>
-<span class="n">IdentityFile</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa_github</span>
-<span class="n">User</span> <span class="n">git</span>
+ <span class="n">HostName</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span>
+ <span class="n">IdentityFile</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa_github</span>
+ <span class="n">User</span> <span class="n">git</span>
 </pre></div>
 </div>
 <dl class="simple">
-<dt>Aggiungiamo la chiave pubblica in <a class="reference external" href="https://github.com/settings/ssh/new">https://github.com/settings/ssh/new</a></dt><dd><p>assengando un nome e inserendo il contenuto della chiave pubblica <strong>id_rsa_github.pub</strong>
+<dt>Aggiungiamo la chiave pubblica in <a class="reference external" href="https://github.com/settings/ssh/new">https://github.com/settings/ssh/new</a></dt><dd><p>assengnado un nome e inserendo il contenuto della chiave pubblica <strong>id_rsa_github.pub</strong>
 nel’apposito campo.</p>
 </dd>
 </dl>
@@ -210,6 +220,57 @@ $ chmod 400 ~/.ssh/config
 <p>Esempio:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push
 </pre></div>
+</div>
+</div>
+<div class="section" id="multiply">
+<h3>Multiply<a class="headerlink" href="#multiply" title="Permalink to this headline">¶</a></h3>
+<p>Se si ha la necessita’ di gestire piu’ chiavi pubbliche per siti e utenti diversi:</p>
+<ul class="simple">
+<li><p>Creare la chiave indicando anche la mail con cui si vuole fare l’accesso.</p></li>
+</ul>
+<p>Esempio:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_altro -C userName@mail.com
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Inserire nel file di configurazione la nuova sezione</p></li>
+</ul>
+<p>Esempio:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+<span class="n">host</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">-</span><span class="n">altro</span>
+ <span class="n">HostName</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span>
+ <span class="n">User</span> <span class="n">git</span>
+ <span class="n">IdentityFile</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa_altro</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Inserire la chiave pubblica nel repository remoto.</p></li>
+<li><p>Per utilizzare questa chiave usare la desinenza dell’host definita.</p></li>
+</ul>
+<p>Esempio:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com-altro:altro/iotbox-app.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="agent">
+<h3>Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h3>
+<p>Se vogliamo aggiungere (non obbligatorio) la gestione delle nostre chiavi pubbliche al nostro agente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh-add ~/.ssh/id_rsa_github
+</pre></div>
+</div>
+<p>Adesso possiamo vedere la lista delle chiavi in gestione:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">add</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p>Se vogliamo vedere tutte le chiavi pubbliche:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">add</span> <span class="o">-</span><span class="n">L</span>
+</pre></div>
+</div>
+<p>Se vogliamo cancellare dalla gestione tutte le chiavi:</p>
+<blockquote>
+<div><p>ssh-add -D</p>
+</div></blockquote>
 </div>
 </div>
 </div>
