@@ -1,13 +1,13 @@
 01-Init
 #######
 
-Premessa
-========
+Intruduction
+============
 
 Creare un account su: https://github.com
 
-Configurazione 
-==============
+Configure 
+=========
 
 Prima di iniziare a lavorare con i repositories dobbiamo
  configurare le nostre variabili d'ambiente.
@@ -74,8 +74,8 @@ Loro utilizzo. Esempio::
 
 	git lg
 
-Inizio
-======
+From Start
+==========
 
 Questo e' il primo documento nel ramo principale.
 

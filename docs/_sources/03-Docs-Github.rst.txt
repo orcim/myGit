@@ -1,0 +1,91 @@
+03-Docs-Github
+##############
+
+Realizzazione di un sito statico html usando **Sphinx**
+
+Build
+=====
+
+Descrizione
+-----------
+
+- crea un repository locale: myGit
+
+- crea un repository pubblico: myGit
+
+- crea un branch: docs-config
+- crea una cartella: docs
+- crea un file vuoto: docs/.nojekyll
+- aggiornare il repository locale
+- aggiornare il repository remoto
+
+- tornare sul branch principale: main
+- merge del branch: docs-config
+
+- sul Web-repository posizionarsi in Settings/Pages/Source
+- impostare il branch: main/docs e salvare
+
+Comandi
+-------
+
+da shell::
+
+	$ mkdir myGit && cd myGit
+	$ git init
+	$ git commit -am 'ok start'
+
+	$ git remote add origin https://github.com/orcim/myGit.git
+	$ git branch -M main
+	$ git push -u origin main
+
+	$ git checkout -b docs-config
+	$ mkdir docs
+	$ touch docs/.nojekyll
+	$ git add -A
+	$ git commit -m 'adds .nojekyll'
+	$ git push origin docs-config
+
+	$ git ckeckout main
+	$ git merge docs-config
+	$ git push origin main
+
+Documentazione
+--------------
+
+Per realizzare una documentazione **Sphinx** 
+
+si rimanda al sito: https://www.sphinx-doc.org/en/master/ o alla sezione successiva.
+
+Si consiglia di usare **source** e **build** separati 
+
+cosi da poter pubblicare solo il codice **html** nel repository.
+
+- copiare la directory di documentazione 
+	chiamata per esempio **mySphinx** nel repository locale
+- eseguire il make file per generare la documentazione
+- nel file **Makefile** aggiungere alla fine la regola **github**
+- pubblicare la documentazione
+
+La regola **github** da aggiungere al **Makefile** e' la seguente::
+
+	github:
+		@make html
+		@cp -a build/html/. ../docs
+
+Comandi
+-------
+
+da shell::
+
+	$ cd myGit
+	$ cp -a  mioPercorso/mySphinx .
+
+	$ cd mySphinx
+	$ make github
+	$ cd ..
+
+	$ git add -A
+	$ git commit -m 'aggiunto documentazione html'
+	$ git push origin 
+
+- adesso si puo' visualizzare il sito statico: https://orcim.github.io/myGit/

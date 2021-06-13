@@ -1,8 +1,20 @@
 02-Operations
 #############
 
-Locale
-======
+Prima di iniziare mettiamo in evidenza come si chiamano i vari puntatori:
+
+- **HEAD** indica l'ultimo commit attuale
+- **origin** e' il puntatore del repository remoto
+
+Se si hanno piu' branch (es: main, docs-config) si vedranno piu' puntatori:
+
+- origin/main
+- origin/docs-config
+
+.. image:: _static/img/git-branch_001.png
+
+Local
+=====
 
 Di seguito le operazioni piu' usate per operare nel repository locale
 
@@ -17,7 +29,7 @@ Esempio::
 
 	$ git add .
 
-Per tracciare tutto anche le directories presenti
+Per tracciare tutto anche le directories::
 
 	$ git add - A
 	
@@ -269,7 +281,7 @@ Per visualizzare l'ultimo commit eseguito::
 	$ git show
 
 
-Remoto
+Remote
 ======
 
 Quando si modifica il repository locale il puntatore **HEAD -> main**

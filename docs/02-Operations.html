@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>02-Operations &#8212; myNotes 0.1 documentation</title>
+    <title>02-Operations &#8212; myGit v1.0.1 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/celery.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -14,7 +14,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="03-Docs" href="03-Docs.html" />
+    <link rel="next" title="03-Docs-Github" href="03-Docs-Github.html" />
     <link rel="prev" title="01-Init" href="01-Init.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -24,12 +24,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="03-Docs.html" title="03-Docs"
+          <a href="03-Docs-Github.html" title="03-Docs-Github"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="01-Init.html" title="01-Init"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">myNotes 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">myGit v1.0.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">02-Operations</a></li> 
       </ul>
     </div>  
@@ -41,8 +41,19 @@
             
   <div class="section" id="operations">
 <h1>02-Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="locale">
-<h2>Locale<a class="headerlink" href="#locale" title="Permalink to this headline">¶</a></h2>
+<p>Prima di iniziare mettiamo in evidenza come si chiamano i vari puntatori:</p>
+<ul class="simple">
+<li><p><strong>HEAD</strong> indica l’ultimo commit attuale</p></li>
+<li><p><strong>origin</strong> e’ il puntatore del repository remoto</p></li>
+</ul>
+<p>Se si hanno piu’ branch (es: main, docs-config) si vedranno piu’ puntatori:</p>
+<ul class="simple">
+<li><p>origin/main</p></li>
+<li><p>origin/docs-config</p></li>
+</ul>
+<img alt="_images/git-branch_001.png" src="_images/git-branch_001.png" />
+<div class="section" id="local">
+<h2>Local<a class="headerlink" href="#local" title="Permalink to this headline">¶</a></h2>
 <p>Di seguito le operazioni piu’ usate per operare nel repository locale</p>
 <div class="section" id="add">
 <h3>Add<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h3>
@@ -54,10 +65,10 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add .
 </pre></div>
 </div>
-<p>Per tracciare tutto anche le directories presenti</p>
-<blockquote>
-<div><p>$ git add - A</p>
-</div></blockquote>
+<p>Per tracciare tutto anche le directories:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add - A
+</pre></div>
+</div>
 <p>Per aggiungere un singolo file nel repository locale:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add pippo.txt
 </pre></div>
@@ -323,8 +334,8 @@ $ git tag v-1.0.0
 </div>
 </div>
 </div>
-<div class="section" id="remoto">
-<h2>Remoto<a class="headerlink" href="#remoto" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="remote">
+<h2>Remote<a class="headerlink" href="#remote" title="Permalink to this headline">¶</a></h2>
 <p>Quando si modifica il repository locale il puntatore <strong>HEAD -&gt; main</strong></p>
 <p>Risultera’ disallineato rispetto al puntatore del repository remoto <strong>origin/master</strong></p>
 <img alt="_images/git_001.png" src="_images/git_001.png" />
@@ -413,8 +424,8 @@ $ git submodule update --init --recursive
   <p class="topless"><a href="01-Init.html"
                         title="previous chapter">01-Init</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="03-Docs.html"
-                        title="next chapter">03-Docs</a></p>
+  <p class="topless"><a href="03-Docs-Github.html"
+                        title="next chapter">03-Docs-Github</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -436,12 +447,12 @@ $ git submodule update --init --recursive
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="03-Docs.html" title="03-Docs"
+          <a href="03-Docs-Github.html" title="03-Docs-Github"
              >next</a> |</li>
         <li class="right" >
           <a href="01-Init.html" title="01-Init"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">myNotes 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">myGit v1.0.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">02-Operations</a></li> 
       </ul>
     </div>

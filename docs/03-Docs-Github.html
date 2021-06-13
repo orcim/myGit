@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03-Docs-Github &#8212; myGit v1.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/celery.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="04-Sphinx" href="04-Sphinx.html" />
+    <link rel="prev" title="02-Operations" href="02-Operations.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="04-Sphinx.html" title="04-Sphinx"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="02-Operations.html" title="02-Operations"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">myGit v1.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">03-Docs-Github</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="docs-github">
+<h1>03-Docs-Github<a class="headerlink" href="#docs-github" title="Permalink to this headline">¶</a></h1>
+<p>Realizzazione di un sito statico html usando <strong>Sphinx</strong></p>
+<div class="section" id="build">
+<h2>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="descrizione">
+<h3>Descrizione<a class="headerlink" href="#descrizione" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>crea un repository locale: myGit</p></li>
+<li><p>crea un repository pubblico: myGit</p></li>
+<li><p>crea un branch: docs-config</p></li>
+<li><p>crea una cartella: docs</p></li>
+<li><p>crea un file vuoto: docs/.nojekyll</p></li>
+<li><p>aggiornare il repository locale</p></li>
+<li><p>aggiornare il repository remoto</p></li>
+<li><p>tornare sul branch principale: main</p></li>
+<li><p>merge del branch: docs-config</p></li>
+<li><p>sul Web-repository posizionarsi in Settings/Pages/Source</p></li>
+<li><p>impostare il branch: main/docs e salvare</p></li>
+</ul>
+</div>
+<div class="section" id="comandi">
+<h3>Comandi<a class="headerlink" href="#comandi" title="Permalink to this headline">¶</a></h3>
+<p>da shell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir myGit &amp;&amp; cd myGit
+$ git init
+$ git commit -am &#39;ok start&#39;
+
+$ git remote add origin https://github.com/orcim/myGit.git
+$ git branch -M main
+$ git push -u origin main
+
+$ git checkout -b docs-config
+$ mkdir docs
+$ touch docs/.nojekyll
+$ git add -A
+$ git commit -m &#39;adds .nojekyll&#39;
+$ git push origin docs-config
+
+$ git ckeckout main
+$ git merge docs-config
+$ git push origin main
+</pre></div>
+</div>
+</div>
+<div class="section" id="documentazione">
+<h3>Documentazione<a class="headerlink" href="#documentazione" title="Permalink to this headline">¶</a></h3>
+<p>Per realizzare una documentazione <strong>Sphinx</strong></p>
+<p>si rimanda al sito: <a class="reference external" href="https://www.sphinx-doc.org/en/master/">https://www.sphinx-doc.org/en/master/</a> o alla sezione successiva.</p>
+<p>Si consiglia di usare <strong>source</strong> e <strong>build</strong> separati</p>
+<p>cosi da poter pubblicare solo il codice <strong>html</strong> nel repository.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>copiare la directory di documentazione</dt><dd><p>chiamata per esempio <strong>mySphinx</strong> nel repository locale</p>
+</dd>
+</dl>
+</li>
+<li><p>eseguire il make file per generare la documentazione</p></li>
+<li><p>nel file <strong>Makefile</strong> aggiungere alla fine la regola <strong>github</strong></p></li>
+<li><p>pubblicare la documentazione</p></li>
+</ul>
+<p>La regola <strong>github</strong> da aggiungere al <strong>Makefile</strong> e’ la seguente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">github</span><span class="p">:</span>
+        <span class="nd">@make</span> <span class="n">html</span>
+        <span class="nd">@cp</span> <span class="o">-</span><span class="n">a</span> <span class="n">build</span><span class="o">/</span><span class="n">html</span><span class="o">/.</span> <span class="o">../</span><span class="n">docs</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Comandi<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>da shell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd myGit
+$ cp -a  mioPercorso/mySphinx .
+
+$ cd mySphinx
+$ make github
+$ cd ..
+
+$ git add -A
+$ git commit -m &#39;aggiunto documentazione html&#39;
+$ git push origin
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>adesso si puo’ visualizzare il sito statico: <a class="reference external" href="https://orcim.github.io/myGit/">https://orcim.github.io/myGit/</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="02-Operations.html"
+                        title="previous chapter">02-Operations</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="04-Sphinx.html"
+                        title="next chapter">04-Sphinx</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="04-Sphinx.html" title="04-Sphinx"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="02-Operations.html" title="02-Operations"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">myGit v1.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">03-Docs-Github</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, by Orcim.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+  </body>
+</html>
